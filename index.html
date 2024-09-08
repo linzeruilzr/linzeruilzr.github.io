@@ -1,12 +1,39 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="gbk">
-    <title>linzeruilzr</title>
-  </head>
-  <body>
-    <h1>欢迎来到linzeruilzr的主页</h1>
-    <h3><a href="https://linzeruilzr.github.io/sjt" target="_blank">随机图</a></h3>
-    <h3><a href="https://linzeruilzr.github.io/yixiehaodongxi" target="_blank">一些好东西</a></h3>
-  </body>
+    <head>
+        <meta charset="gbk">
+        <title>linzeruilzr</title>
+        <style>
+            .button {
+                background-color: #008CBA;
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+                transition-duration: 0.4s;
+                border-radius: 8px;
+            }
+            .button1:hover {
+                box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+            }
+        </style>
+        <script>
+            function sjt() {
+                window.open("https://linzeruilzr.github.io/sjt");
+            }
+            function yixiehaodongxi() {
+                window.open("https://linzeruilzr.github.io/yixiehaodongxi");
+            }
+        </script>
+    </head>
+    <body>
+        <h1>欢迎来到linzeruilzr的主页</h1>
+        <h3><button class="button button1" onclick="sjt()">随机图</button></h3>
+        <h3><button class="button button1" onclick="yixiehaodongxi()">一些好东西</button></h3>
+    </body>
 </html>
