@@ -4,6 +4,57 @@
         <meta charset="gbk">
         <title>linzeruilzr</title>
         <style>
+            body, html {
+                margin: 0;
+                padding: 0;
+                height: 100%;
+                overflow: hidden;
+                background-color: #000;
+                font-family: Arial, sans-serif;
+                color: #ffffff;
+            }
+
+            .stars, .stars2, .stars3 {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-repeat: repeat;
+                background-size: contain;
+            }
+
+            .stars {
+                background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+                animation: animStar 50s linear infinite;
+            }
+
+            .stars2 {
+                background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+                animation: animStar 100s linear infinite;
+            }
+
+            .stars3 {
+                background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+                animation: animStar 150s linear infinite;
+            }
+
+            @keyframes animStar {
+                from { transform: translateY(0); }
+                to { transform: translateY(-1000px); }
+            }
+
+            .content {
+                position: relative;
+                z-index: 1;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                text-align: center;
+            }
+
             .button {
                 background-color: #008CBA;
                 border: none;
@@ -18,22 +69,65 @@
                 transition-duration: 0.4s;
                 border-radius: 8px;
             }
+
             .button1:hover {
                 box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
             }
+
+            .custom-input-box {
+                width: 300px;
+                height: 40px;
+                box-sizing: border-box;
+                border: 1px solid #dcdfe6;
+                border-radius: 4px;
+                outline: none;
+                padding: 0 15px;
+                color: #606266;
+            }
+
+            .custom-input-box:focus {
+                border-color: #409eff;
+            }
+            
+            ::-webkit-input-placeholder {
+                color: #C0C4CC;
+            }
+
+            .message {
+            margin-top: 10px;
+            color: red;
+            }
         </style>
         <script>
-            function sjt() {
-                window.open("https://linzeruilzr.github.io/sjt");
-            }
             function yxhdx() {
                 window.open("https://linzeruilzr.github.io/yxhdx");
+            }
+            function login() {
+                var password = document.getElementById("password").value;
+                if (password == "lssj2903") {
+                    message.style.color = "green";
+                    message.innerText = "密码正确！";
+                    window.open("https://linzeruilzr.github.io/mmkj");
+                } else {
+                    message.style.color = "red";
+                    message.innerText = "密码错误";
+                }
+                setTimeout(function() {
+                message.innerText = "";
+                }, 3000);
             }
         </script>
     </head>
     <body>
-        <h1>欢迎来到linzeruilzr的主页</h1>
-        <h3><button class="button button1" onclick="sjt()">随机图</button></h3>
-        <h3><button class="button button1" onclick="yxhdx()">一些好东西</button></h3>
+        <div class="stars"></div>
+        <div class="stars2"></div>
+        <div class="stars3"></div>
+        <div class="content">
+            <h1>欢迎来到linzeruilzr的主页</h1>
+            <h3><button class="button button1" onclick="yxhdx()">一些好东西</button></h3>
+            <h2>linzeruilzr的秘密空间</h2>
+            <h3><input class="custom-input-box" type="password" id="password" placeholder="密码" required><button class="button button1" onclick="login()">进入</button></h3>
+            <h2><p class="message" id="message"></p></h2>
+        </div>
     </body>
 </html>
